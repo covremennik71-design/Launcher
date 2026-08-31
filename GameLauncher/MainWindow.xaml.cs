@@ -59,6 +59,6 @@ public partial class MainWindow : Window
 
     private void BtnSite_Click(object sender, RoutedEventArgs e)
     {
-        _launcherManager.OpenSite("https://example.com");
+        _launcherManager.OpenSite("https://projero.vercel.app");
     }
 }

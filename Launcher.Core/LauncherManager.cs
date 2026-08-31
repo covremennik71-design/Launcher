@@ -86,7 +86,7 @@ public class LauncherManager
         }
     }
 
-    public void OpenSite(string url = "https://example.com")
+    public void OpenSite(string url = "https://projero.vercel.app")
     {
         try
         {
