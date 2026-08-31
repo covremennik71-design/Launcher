@@ -45,7 +45,26 @@ public class LauncherManager
             return;
 
         CurrentStatus = LauncherStatus.Launching;
-        await Task.Delay(2000); // Simulate game start
+        await Task.Delay(1000); // Simulate game start
+
+        try
+        {
+            string gameBatPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "game.bat");
+            if (System.IO.File.Exists(gameBatPath))
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = gameBatPath,
+                    UseShellExecute = true
+                });
+            }
+        }
+        catch
+        {
+            CurrentStatus = LauncherStatus.Error;
+            return;
+        }
+
         CurrentStatus = LauncherStatus.Ready;
     }
 
